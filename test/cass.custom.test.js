@@ -351,4 +351,62 @@ describe('cassandra custom tests', function() {
     });
   });
 
+  var targetTable = 'CASS_SORTABLE';
+
+  it('discoverSchemas', function(done) {
+    db.discoverSchemas(targetTable, {}, function(err, data) {
+      console.log('============== discoverSchemas:', err, data);
+      done(err);
+    });
+  });
+
+  it('discoverSchema', function(done) {
+    db.discoverSchema(targetTable, {}, function(err, data) {
+      console.log('============== discoverSchema:', err, data);
+      done(err);
+    });
+  });
+
+  it('discoverPrimaryKeys', function(done) {
+    db.discoverPrimaryKeys(targetTable, {}, function(err, data) {
+      console.log('============== discoverPrimaryKeys:', err, data);
+      done(err);
+    });
+  });
+
+  it('discoverForeignKeys', function(done) {
+    db.discoverForeignKeys(targetTable, {}, function(err, data) {
+      console.log('============== discoverForeignKeys:', err, data);
+      done(err);
+    });
+  });
+
+  it('discoverExportedForeignKeys', function(done) {
+    db.discoverExportedForeignKeys(targetTable, {}, function(err, data) {
+      console.log('============== discoverExportedForeignKeys:', err, data);
+      done(err);
+    });
+  });
+
+  it('discoverAndBuildModels', function(done) {
+    db.discoverAndBuildModels(targetTable, {}, function(err, data) {
+      console.log('============== discoverAndBuildModels:', err, data);
+      done(err);
+    });
+  });
+
+  it('discoverModelDefinitions', function(done) {
+    db.discoverModelDefinitions({}, function(err, data) {
+      console.log('============== discoverModelDefinitions:', err, data);
+      done(err);
+    });
+  });
+
+  it('discoverModelProperties', function(done) {
+    db.discoverModelProperties(targetTable, {}, function(err, data) {
+      console.log('============== discoverModelProperties:', err, data);
+      done(err);
+    });
+  });
+
 });
